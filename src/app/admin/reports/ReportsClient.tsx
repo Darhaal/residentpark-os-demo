@@ -35,7 +35,8 @@ function downloadCSV(filename: string, headers: readonly string[], rows: (string
 
 export function ReportsClient({ data }: { data: ReportsData }) {
   const { errorMsg, successMsg, showToast, clearFeedback } = useFeedback();
-  const today = new Date().toISOString().split('T')[0];
+  // Fixed reporting snapshot date for the demo dataset.
+  const snapshotDate = '2026-06-17';
 
   return (
     <main className="flex-1 overflow-y-auto bg-muted/30 px-4 py-5 sm:px-6 lg:px-8">
@@ -56,7 +57,7 @@ export function ReportsClient({ data }: { data: ReportsData }) {
           </div>
           <div className="inline-flex h-8 w-fit items-center gap-2 rounded-md border border-border bg-card px-3 text-xs shadow-sm">
             <span className="text-muted-foreground">{messages.snapshotLabel}</span>
-            <span className="font-medium tabular-nums text-foreground">{today}</span>
+            <span className="font-medium tabular-nums text-foreground">{snapshotDate}</span>
           </div>
         </header>
 
@@ -100,7 +101,7 @@ export function ReportsClient({ data }: { data: ReportsData }) {
           title={messages.sections.vehiclesWithoutSpot}
           count={data.vehiclesWithoutSpot.length}
           onExport={() => downloadCSV(
-            messages.csv.vehiclesWithoutSpotFilename(today),
+            messages.csv.vehiclesWithoutSpotFilename(snapshotDate),
             messages.csv.vehiclesWithoutSpotHeaders,
             data.vehiclesWithoutSpot.map(vehicle => [vehicle.plate_number, vehicle.make, vehicle.model || '', vehicle.unit || '', vehicle.owner || ''])
           )}
@@ -120,7 +121,7 @@ export function ReportsClient({ data }: { data: ReportsData }) {
           title={messages.sections.unitsWithoutVehicle}
           count={data.unitsWithoutVehicle.length}
           onExport={() => downloadCSV(
-            messages.csv.unitsWithoutVehicleFilename(today),
+            messages.csv.unitsWithoutVehicleFilename(snapshotDate),
             messages.csv.unitsWithoutVehicleHeaders,
             data.unitsWithoutVehicle.map(unit => [unit.apartment_number, unit.status, unit.residents])
           )}

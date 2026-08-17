@@ -6,6 +6,20 @@ relocations, approvals, construction disruptions, parking issues, notices, repor
 invitations, and audit history — with distinct resident and admin/superadmin
 experiences.
 
+## Live demo
+
+**[parking-demo-ecru.vercel.app](https://parking-demo-ecru.vercel.app)** — a seeded, self-contained demo of the full product.
+
+Sign in with either role (throwaway accounts on a shared demo instance; data may be reset):
+
+| Role | Email | Password |
+| --- | --- | --- |
+| Admin | `tester.admin@qa.local` | `Tester-2026!` |
+| Resident | `demo.alice@qa.local` | `Demo-2026!` |
+
+The admin account manages approvals, parking, vehicles, issues, disruptions, notices, and
+reports; the resident owns a unit with an assigned spot and a vehicle awaiting approval.
+
 ## Status & confidentiality
 
 This repository is a **curated review build** shared for evaluation. It runs the core
@@ -15,7 +29,7 @@ production system.
 Withheld under confidentiality and **not** included in this copy:
 
 - production deployment configuration and any live environment values;
-- seed/demo data and account credentials;
+- live production data and real user credentials;
 - internal engineering, planning, and QA documentation;
 - proprietary modules and later-stage development.
 

@@ -1,5 +1,7 @@
 # ResidentPark OS
 
+[![CI](https://github.com/Darhaal/residentpark-os-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/Darhaal/residentpark-os-demo/actions/workflows/ci.yml)
+
 A residential parking and property-administration platform built with Next.js and
 Supabase. It manages residents, apartments, vehicles, parking assignments and
 relocations, approvals, construction disruptions, parking issues, notices, reports,

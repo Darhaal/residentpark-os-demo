@@ -14,8 +14,8 @@ Sign in with either role (throwaway accounts on a shared demo instance; data may
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Admin | `tester.admin@qa.local` | `Tester-2026!` |
-| Resident | `demo.alice@qa.local` | `Demo-2026!` |
+| Admin | `tester.admin@qa.local` | `G2&!HKwthu` |
+| Resident | `demo.alice@qa.local` | `2ykDM9su@C` |
 
 The admin account manages approvals, parking, vehicles, issues, disruptions, notices, and
 reports; the resident owns a unit with an assigned spot and a vehicle awaiting approval.

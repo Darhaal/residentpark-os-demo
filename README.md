@@ -6,15 +6,6 @@ relocations, approvals, construction disruptions, parking issues, notices, repor
 invitations, and audit history — with distinct resident and admin/superadmin
 experiences.
 
-## Product preview
-
-> **Note:** add the three images below to [`screenshots/`](screenshots/) before making the
-> repository public — see [`screenshots/README.md`](screenshots/README.md) for what to capture.
-
-| Admin · parking map | Resident dashboard | Admin · management |
-| :---: | :---: | :---: |
-| ![Admin parking map](screenshots/admin-parking-map.png) | ![Resident dashboard](screenshots/resident-dashboard.png) | ![Admin management dashboard](screenshots/admin-dashboard.png) |
-
 ## Live demo
 
 **[parking-demo-ecru.vercel.app](https://parking-demo-ecru.vercel.app)** — a seeded, self-contained demo of the full product.

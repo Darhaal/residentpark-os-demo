@@ -6,6 +6,15 @@ relocations, approvals, construction disruptions, parking issues, notices, repor
 invitations, and audit history — with distinct resident and admin/superadmin
 experiences.
 
+## Product preview
+
+> **Note:** add the three images below to [`screenshots/`](screenshots/) before making the
+> repository public — see [`screenshots/README.md`](screenshots/README.md) for what to capture.
+
+| Admin · parking map | Resident dashboard | Admin · management |
+| :---: | :---: | :---: |
+| ![Admin parking map](screenshots/admin-parking-map.png) | ![Resident dashboard](screenshots/resident-dashboard.png) | ![Admin management dashboard](screenshots/admin-dashboard.png) |
+
 ## Live demo
 
 **[parking-demo-ecru.vercel.app](https://parking-demo-ecru.vercel.app)** — a seeded, self-contained demo of the full product.
@@ -20,6 +29,18 @@ Sign in with either role (throwaway accounts on a shared demo instance; data may
 The admin account manages approvals, parking, vehicles, issues, disruptions, notices, and
 reports; the resident owns a unit with an assigned spot and a vehicle awaiting approval.
 
+## Engineering highlights
+
+- **Defense-in-depth authorization** — server-side guards (`src/lib/auth.ts`) enforce
+  authentication, role, and account-status checks, backed by Postgres Row-Level Security
+  and RPC self-checks so the database enforces the same rules as the application.
+- **Transactional workflows** — sensitive multi-step state changes are delegated to
+  `tx_*` Postgres RPCs, keeping operations atomic and auditable.
+- **Multi-role domain model** — distinct Resident / Admin / Superadmin flows with account
+  lifecycle states (pending, approved, suspended, rejected).
+- **Automated quality gates** — unit, database-authorization, security-posture, and browser
+  E2E suites run in GitHub Actions CI alongside typecheck, lint, and production build.
+
 ## Status & confidentiality
 
 This repository is a **curated review build** shared for evaluation. It runs the core
@@ -33,7 +54,9 @@ Withheld under confidentiality and **not** included in this copy:
 - internal engineering, planning, and QA documentation;
 - proprietary modules and later-stage development.
 
-Live infrastructure details and anything marked confidential cannot be disclosed here.
+Everything here has been sanitized for public review: production data, live configuration,
+and proprietary components have been removed. Live infrastructure details and anything
+marked confidential cannot be disclosed here.
 
 ## Tech stack
 
